@@ -1,0 +1,150 @@
+<% include admin-header %>
+  <!--start sidebar -->
+  <aside class="sidebar-wrapper" data-simplebar="true">
+    <div class="sidebar-header">
+      <div>
+        <img src="/images/logo-fix.png" class="logo-icon" alt="logo icon">
+      </div>
+      <div>
+        <h4 class="logo-text">HP</h4>
+      </div>
+      <div class="toggle-icon ms-auto"> <i class="bi bi-list"></i>
+      </div>
+    </div>
+    <!--navigation-->
+    <ul class="metismenu" id="menu">
+      <li>
+        <a href="/products">
+          <div class="parent-icon"><i class="bi bi-box-seam"></i>
+          </div>
+          <div class="menu-title">Sản phẩm</div>
+        </a>
+      </li>
+      <li>
+        <a href="/add-product">
+          <div class="parent-icon"><i class="bi bi-bag-plus-fill"></i>
+          </div>
+          <div class="menu-title">Thêm sản phẩm</div>
+        </a>
+      </li>
+      <li>
+        <a href="/customer">
+          <div class="parent-icon"><i class="bi bi-file-person"></i>
+          </div>
+          <div class="menu-title">Khách hàng</div>
+        </a>
+      </li>
+    <li>
+        <a href="/email">
+          <div class="parent-icon"><i class="bi bi-envelope"></i>
+          </div>
+          <div class="menu-title">Email</div>
+        </a>
+      </li>
+      <li>
+        <a href="/add-blog">
+          <div class="parent-icon"><i class="bi bi-bookmark-plus"></i>
+          </div>
+          <div class="menu-title">Thêm blog</div>
+        </a>
+      </li>
+      <li>
+        <a href="/admin-blog">
+          <div class="parent-icon"><i class="bi bi-book"></i>
+          </div>
+          <div class="menu-title">Blog</div>
+        </a>
+      </li>
+    </ul>
+    </aside>
+
+  <!--end sidebar -->
+  <main class="page-content">
+    <!--breadcrumb-->
+    <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+      <div class="breadcrumb-title pe-3">eCommerce</div>
+      <div class="ps-3">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb mb-0 p-0">
+            <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Thêm Blog</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="ms-auto">
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary">Settings</button>
+          <button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split"
+            data-bs-toggle="dropdown"> <span class="visually-hidden">Toggle Dropdown</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end"> <a class="dropdown-item"
+              href="javascript:;">Action</a>
+            <a class="dropdown-item" href="javascript:;">Another action</a>
+            <a class="dropdown-item" href="javascript:;">Something else here</a>
+            <div class="dropdown-divider"></div> <a class="dropdown-item" href="javascript:;">Separated link</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="card">
+          <div class="card-header py-3 bg-transparent">
+            <h5 class="mb-0">Thêm blog</h5>
+            <% if(success){ %> 
+            <div class="alert alert-success">
+              <strong><%= success %> </strong>
+            </div>
+            <% } %>             
+          </div>
+    <form class="row g-3" method="POST" action='/add-blog' enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="">Title</label>
+          <input type="text"
+            class="form-control" name="title" aria-describedby="helpId" placeholder="Title">
+        </div>
+        <div class="form-group">
+          <label for="">Cover</label>
+          <input class="form-control" type="file" multiple="multiple" name="img">
+        </div>
+      <div class="form-group">
+        <div class="entry">
+          <script src="/public/ckeditor/ckeditor.js"></script>
+        <div class="body">
+         <textarea name="txtContent" id="txtContent"></textarea>
+           <script>
+               CKEDITOR.replace( 'txtContent',{
+                 extraPlugins:'filebrowser',
+                 filebrowserBrowserUrl:'/list', //upload location
+                 filebrowserUploadMethod:'form',
+                 filebrowserUploadUrl:'/add-image' //route
+               })
+           </script>
+        </div>
+      </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</div>
+</div>
+</main>
+<!--end wrapper-->
+
+
+<!-- Bootstrap bundle JS -->
+<script src="/javascripts/js/bootstrap.bundle.min.js"></script>
+<!--plugins-->
+<script src="/javascripts/js/jquery.min.js"></script>
+<script src="/javascripts/plugins/simplebar/js/simplebar.min.js"></script>
+<script src="/javascripts/plugins/metismenu/js/metisMenu.min.js"></script>
+<script src="/javascripts/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+<script src="/javascripts/js/pace.min.js"></script>
+<!--app-->
+<script src="/javascripts/js/app.js"></script>
+
+
+</body>
+
+</html>

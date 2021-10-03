@@ -1,0 +1,292 @@
+<% include header %>
+
+    <!--slider area start-->
+    <section class="slider_section">
+        <div class="slider_area owl-carousel">
+            <div class="single_slider d-flex align-items-center" data-bgimg="/images/banner/slider1.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="slider_content">
+                                <h1>BIG SALE</h1>
+                                <p>Discount <span>20% Off </span> For HP Members </p>
+                                <a class="button" href="/shop">Discover Now </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single_slider d-flex align-items-center" data-bgimg="/images/banner/slider2.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="slider_content">
+                                <h1>TOP SALE</h1>
+                                <p>Discount <span>20% Off </span> For HP Members </p>
+                                <a class="button" href="/shop">Discover Now </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single_slider d-flex align-items-center" data-bgimg="/images/banner/slider10.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="slider_content">
+                                <h1>Lovely Pots</h1>
+                                <p>Discount <span>20% Off </span> For HP Members </p>
+                                <a class="button" href="/shop">Discover Now </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--slider area end-->
+
+    <!--shipping area start-->
+    <div class="shipping_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_shipping">
+                        <div class="shipping_icone">
+                            <img src="/images/ticker/shipping.png" alt="">
+                        </div>
+                        <div class="shipping_content">
+                            <h3>Fast Delivery</h3>
+                            <p>Fast shipping around the world for all <br> orders</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_shipping col_2">
+                        <div class="shipping_icone">
+                            <img src="/images/ticker/payment.png" alt="">
+                        </div>
+                        <div class="shipping_content">
+                            <h3>Safe Payment</h3>
+                            <p>With our payment gateway, don’t worry <br> about your information</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_shipping col_3">
+                        <div class="shipping_icone">
+                            <img src="/images/ticker/services.png" alt="">
+                        </div>
+                        <div class="shipping_content">
+                            <h3>Friendly Services</h3>
+                            <p>You have 30-day return guarantee for <br> every single order</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--shipping area end-->
+
+    <!--product area start-->
+    <div class="product_area  mb-95">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="product_header">
+                        <div class="section_title">
+                            <h2>Best-selling</h2>
+                        </div>
+                        <div class="product_tab_btn">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="plant1" role="tabpanel">
+                    <div class="row">
+                        <div class="product_carousel product_column4 owl-carousel">
+                            <% if(product_bs){product_bs.forEach(function(x){ %> 
+                            <div class="col-lg-3">
+                                <div class="product_items">
+                                    <article class="single_product">
+                                        <figure>
+                                            <div class="product_thumb">
+                                                <a class="primary_img" href="/product-details.<%=x._id%>"><img
+                                                        src="/public/uploads/<%=x.Cover%>" alt=""></a>
+                                                <div class="label_product">
+                                                </div>
+                                            </div>
+                                            <figcaption class="product_content">
+                                                <h4 class="product_name"><a href="/product-details.<%=x._id%>"><%=x.Title%>
+                                                        </a></h4>
+                                            </figcaption>
+                                        </figure>
+                                    </article>
+                                </div>
+                            </div>
+                            <% })} %> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--product area end-->
+
+    <!--product area start-->
+    
+    <div class="product_area product_deals ">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section_title">
+                        <h2>New</h2>
+                    </div>
+                </div>
+            </div>
+                <div class="row">
+                    <div class="product_carousel product_column5 owl-carousel">
+                        <% if(product_new){product_new.forEach(function(x){ %>
+                        <div class="col-lg-3">
+                            <article class="single_product">
+                                <figure>
+                                    <div class="product_thumb">
+                                        <a class="primary_img" href="/product-details.<%=x._id%>"><img
+                                                src="/public/uploads/<%=x.Cover%>" alt=""></a>
+                                    </div>
+                                    <figcaption class="product_content">
+                                        <h4 class="product_name"><a href="/product-details.<%=x._id%>"><%=x.Title%></a>
+                                        </h4>
+                                    </figcaption>
+                                </figure>
+                            </article>
+                        </div>
+                        <% })} %> 
+                    </div>
+                </div>
+        </div>
+    </div>
+    <!--product area end-->
+
+
+    <!--blog area start-->
+    <section class="blog_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section_title">
+                        <h2>Our Latest Posts</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="blog_carousel blog_column3 owl-carousel">
+                    <% if(blog){blog.forEach(function(x){ %> 
+                    <div class="col-lg-3">
+                        <article class="single_blog">
+                            <figure>
+                                <div class="blog_thumb">
+                                    <a href="/blog-details.<%=x._id%>"><img src="/public/uploads/<%=x.Cover%>" alt=""></a>
+                                </div>
+                                <figcaption class="blog_content">
+                                    <h4 class="post_title"><a href="/blog-details.<%=x._id%>"><%=x.Title%></a></h4>
+                                    <div class="articles_date">
+                                        <p>By <span>admin / <%=x.Date%></span></p>
+                                    </div>
+                                    <footer class="blog_footer">
+                                        <a href="/blog-details.<%=x._id%>">Reading</a>
+                                    </footer>
+                                </figcaption>
+                            </figure>
+                        </article>
+                    </div>
+                    <% })} %> 
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--blog area end-->
+
+    <!--newsletter area start-->
+    <div class="newsletter_area_start">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section_title">
+                        <h2>Get <span>20% Off</span> Your Next Order</h2>
+                    </div>
+                    <div class="newsletter_container">
+                        <div class="subscribe_form">
+                            <form id="mc-form" class="mc-form footer-newsletter" action="/add-email" method="POST">
+                                <input type="email" placeholder="Enter your email" name="email"/>
+                                <button id="mc-submit" type="submit" onclick="myFunction()">Subscribe</button>
+                                <div class="email_icon">
+                                    <i class="icon-mail"></i>
+                                </div>
+                            </form>
+                            <!-- mailchimp-alerts Start -->
+                            <div class="mailchimp-alerts text-centre">
+                                <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
+                                <div class="mailchimp-success"></div><!-- mailchimp-success end -->
+                                <div class="mailchimp-error"></div><!-- mailchimp-error end -->
+                            </div><!-- mailchimp-alerts end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--newsletter area end-->
+<% include footer %>
+
+    <!-- modal area start-->
+
+    <!-- modal area end-->
+
+
+
+
+    <!-- JS
+============================================ -->
+    <!--jquery min js-->
+    <script>
+        function myFunction() {
+          alert("Success! Have a nice day!");
+        }
+    </script>
+    <script src="/javascripts/js/vendor/jquery-3.4.1.min.js"></script>
+    <!--popper min js-->
+    <script src="/javascripts/js/popper.js"></script>
+    <!--bootstrap min js-->
+    <script src="/javascripts/js/bootstrap.min.js"></script>
+    <!--owl carousel min js-->
+    <script src="/javascripts/js/owl.carousel.min.js"></script>
+    <!--slick min js-->
+    <script src="/javascripts/js/slick.min.js"></script>
+    <!--magnific popup min js-->
+    <script src="/javascripts/js/jquery.magnific-popup.min.js"></script>
+    <!--counterup min js-->
+    <script src="/javascripts/js/jquery.counterup.min.js"></script>
+    <!--jquery countdown min js-->
+    <script src="/javascripts/js/jquery.countdown.js"></script>
+    <!--jquery ui min js-->
+    <script src="/javascripts/js/jquery.ui.js"></script>
+    <!--jquery elevatezoom min js-->
+    <script src="/javascripts/js/jquery.elevatezoom.js"></script>
+    <!--isotope packaged min js-->
+    <script src="/javascripts/js/isotope.pkgd.min.js"></script>
+    <!--slinky menu js-->
+    <script src="/javascripts/js/slinky.menu.js"></script>
+    <!-- Plugins JS -->
+    <script src="/javascripts/js/plugins.js"></script>
+
+    <!-- Main JS -->
+    <script src="/javascripts/js/main.js"></script>
+
+
+
+</body>
+
+</html>

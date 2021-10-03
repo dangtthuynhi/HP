@@ -1,0 +1,158 @@
+<% include header %>
+    <!--breadcrumbs area start-->
+    <div class="breadcrumbs_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb_content">
+                        <h3>Blog</h3>
+                        <ul>
+                            <li><a href="/">home</a></li>
+                            <li>blog</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs area end-->
+
+    <!--blog area start-->
+    <div class="blog_page_section mt-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="blog_wrapper">
+                        <% if(blog){blog.forEach(function(x){ %> 
+                        <article class="single_blog">
+                            <figure>
+                                <div class="blog_thumb">
+                                    <a href="/blog-details.<%=x._id%>"><img src="/public/uploads/<%=x.Cover%>" alt=""></a>
+                                </div>
+                                <figcaption class="blog_content">
+                                    <h4 class="post_title"><a href="/blog-details.<%=x._id%>"><i class="fa fa-paper-plane"></i>
+                                            <%=x.Title%> </a></h4>
+                                    <div class="blog_meta">
+                                        <p>By admin - Date <%=x.Date%> </p>
+                                    </div>
+                                    <footer class="btn_more">
+                                        <a href="/blog-details.<%=x._id%>"> Read more</a>
+                                    </footer>
+                                </figcaption>
+                            </figure>
+                        </article>
+                        <% })} %> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--blog area end-->
+
+    <!--blog pagination area start-->
+    <div class="blog_pagination">
+        <div class="container">
+            <!-- pagination -->
+            <% if(pages > 0) { %>
+            <!-- show pagination if there is pages -->
+            <nav class="mx-auto">
+              <ul class="pagination" style="margin-top: 2rem;">
+                <!-- FIRST ITEM -->
+                <% if(current == 1) { %>
+                <li class="page-item disabled">
+                  <a class="page-link" href="<%=filter%>">First</a>
+                </li>
+                <% } else { %>
+                <li class="page-item">
+                  <a class="page-link" href="<%=filter%>">First</a>
+                </li>
+                <% } %>
+                <!-- ITEMS  -->
+                <% var i = (Number(current) > 3 ? Number(current) - 2 : 1) %>
+                <% if(i !== 1) { %>
+                <li class="page-item disabled">
+                  <a class="page-link" href="#">...</a>
+                </li>
+                <% } %>
+                <% for(; i <= (Number(current) + 2) && i <= pages; i++) { %>
+                <% if(i == current) { %>
+                <li class="page-item active">
+                  <a class="page-link" href="<%=filter%>/<%=i%>">
+                    <%=i%>
+                  </a>
+                </li>
+                <% } else { %>
+                <li class="page-item">
+                  <a class="page-link" href="<%=filter%>/<%=i%>">
+                    <%=i%>
+                  </a>
+                </li>
+                <% } %>
+                <% if (i == Number(current) + 2 && i < pages) { %>
+                <li class="page-item disabled">
+                  <a class="page-link" href="#">...</a>
+                </li>
+                <% } %>
+                <% } %>
+                <!-- LAST ITEM -->
+                <% if(current == pages) { %>
+                <li class="page-item disabled">
+                  <a class="page-link" href="#">
+                    Last
+                  </a>
+                </li>
+                <% } else { %>
+                <li class="page-item">
+                  <a class="page-link" href="<%=filter%>/<%=pages%>">
+                    Last
+                  </a>
+                </li>
+                <% } %>
+              </ul>
+            </nav>
+            <% } %>
+          </div>
+          </div>
+    </div>
+    <!--blog pagination area end-->
+
+    <!--brand area start-->
+    <!--brand area end-->
+    <% include footer %>
+        <!-- JS
+============================================ -->
+    <!--jquery min js-->
+    <script src="/javascripts/js/vendor/jquery-3.4.1.min.js"></script>
+    <!--popper min js-->
+    <script src="/javascripts/js/popper.js"></script>
+    <!--bootstrap min js-->
+    <script src="/javascripts/js/bootstrap.min.js"></script>
+    <!--owl carousel min js-->
+    <script src="/javascripts/js/owl.carousel.min.js"></script>
+    <!--slick min js-->
+    <script src="/javascripts/js/slick.min.js"></script>
+    <!--magnific popup min js-->
+    <script src="/javascripts/js/jquery.magnific-popup.min.js"></script>
+    <!--counterup min js-->
+    <script src="/javascripts/js/jquery.counterup.min.js"></script>
+    <!--jquery countdown min js-->
+    <script src="/javascripts/js/jquery.countdown.js"></script>
+    <!--jquery ui min js-->
+    <script src="/javascripts/js/jquery.ui.js"></script>
+    <!--jquery elevatezoom min js-->
+    <script src="/javascripts/js/jquery.elevatezoom.js"></script>
+    <!--isotope packaged min js-->
+    <script src="/javascripts/js/isotope.pkgd.min.js"></script>
+    <!--slinky menu js-->
+    <script src="/javascripts/js/slinky.menu.js"></script>
+    <!-- Plugins JS -->
+    <script src="/javascripts/js/plugins.js"></script>
+
+    <!-- Main JS -->
+    <script src="/javascripts/js/main.js"></script>
+
+
+
+</body>
+
+</html> 
