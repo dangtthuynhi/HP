@@ -106,12 +106,12 @@
               <form class="row g-3" method="POST" action="/add-product" enctype="multipart/form-data">
                 <div class="col-12">
                   <label class="form-label">Tiêu đề</label>
-                  <input type="text" class="form-control" placeholder="Product title" name="title">
+                  <input type="text" class="form-control" placeholder="Product title" name="title" required>
                 </div>
                 <div class="col-12">
-                  <label class="form-label">Màu sắc</label>
+                  <label class="form-label">Màu sắc(Có thể chọn nhiều)</label>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="white" value="White" name="color">
+                    <input class="form-check-input" type="checkbox" id="white" value="White" name="color" required>
                     <label class="form-check-label" for="white">White</label>
                   </div>
                   <div class="form-check form-check-inline">
@@ -145,20 +145,20 @@
                 </div>
                 <div class="col-12">
                   <label class="form-label">Ảnh ngoài</label>
-                  <input class="form-control" type="file" name="cover">
+                  <input class="form-control" type="file" name="cover" required>
                 </div>
                 <div class="col-12">
-                  <label class="form-label">Ảnh mô tả</label>
-                  <input class="form-control" type="file" multiple="multiple" name="img">
+                  <label class="form-label">Ảnh mô tả(Vui lòng chọn nhiều)</label>
+                  <input class="form-control" type="file" multiple="multiple" name="img" required>
                 </div>
                 <div class="col-12">
                   <label class="form-label">Size</label>
-                  <textarea class="form-control" name="size" placeholder="Size" rows="5" cols="4"></textarea>
+                  <textarea class="form-control" name="size" placeholder="Size" rows="5" cols="4" required></textarea>
                 </div>
                 <div class="col-12">
                   <label class="form-label">Chất liệu</label><br>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="material" id="fiberstone" value="Fiberstone">
+                    <input class="form-check-input" type="radio" name="material" id="fiberstone" value="Fiberstone" required>
                     <label class="form-check-label" for="fiberstone">Fiberstone</label>
                   </div>
                   <div class="form-check form-check-inline">
@@ -209,7 +209,7 @@
                 <div class="col-12">
                   <label class="form-label">Hình dáng</label><br>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="shape" id="round" value="Round">
+                    <input class="form-check-input" type="radio" name="shape" id="round" value="Round" required>
                     <label class="form-check-label" for="round">Round</label>
                   </div>
                   <div class="form-check form-check-inline">
@@ -239,7 +239,7 @@
                 </div>
                 <div class="col-12">
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="bestselling" value="Best-Selling" name="page">
+                    <input class="form-check-input" type="checkbox" id="bestselling" value="Best-Selling" name="page" required>
                     <label class="form-check-label" for="bestselling">Best-Selling</label>
                   </div>
                   <div class="form-check form-check-inline">
